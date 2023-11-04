@@ -1,6 +1,6 @@
 from book import Book
 from employee import Employee
-from file import CsvFile
+from file import JsonFile
 import datetime
 
 
@@ -11,10 +11,42 @@ class Sale:
         self.book_list = []
         self.data_sale = []
         self.real_prise_sale = []
-        self.obj_file = CsvFile()
+        self.obj_file = JsonFile()
 
     def write_file(self):
-        self.obj_file.write_info_to_file(self.employee_list, self.book_list, self.data_sale, self.real_prise_sale)
+        empl = {"employee": []}
+        for employ in self.employee_list:
+             empl["employee"].append(employ.to_json())
+        self.obj_file.write_to_file(0, empl)
+        boo = {"book": []}
+        for book in self.book_list:
+            boo["book"].append(book.to_json())
+        self.obj_file.write_to_file(1, boo)
+        sal = {"sale": []}
+        for sale in self.data_sale:
+            sal["sale"].append({"name": sale[0], "book": sale[1], "date": sale[2]})
+        self.obj_file.write_to_file(2, sal)
+        pris = {"prise": []}
+        for prise in self.real_prise_sale:
+            pris["prise"].append(prise)
+        self.obj_file.write_to_file(3, pris)
+
+    def reade_file(self):
+        while True:
+            try:
+                print("\tMini menu file\n"
+                      "1.Вывести информацию про сотрудника\n"
+                      "2.Вывести информацию про книги\n"
+                      "3.Вывести информацию про продажи\n"
+                      "4.Вывести информацию про цены на киниги\n")
+                select = int(input("Введите выбор: "))
+                if select >= 5 or select <= 0:
+                    raise ValueError("Неивестный пункт введите ещё раз свой выбор")
+                else:
+                    self.obj_file.reade_from_file(int(select))
+                    break
+            except ValueError as s:
+                print(s)
 
     def list_empty(self):
         if len(self.data_sale) == 0:

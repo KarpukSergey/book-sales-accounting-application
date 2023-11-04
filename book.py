@@ -1,3 +1,6 @@
+import json
+
+
 class Book:
 
     def __init__(self, name=None, year=None, author=None,
@@ -64,3 +67,13 @@ class Book:
                         return True
             except ValueError as s:
                 print(s)
+
+    def to_json(self):
+        return {
+            "name": self.name,
+            "year": self.year,
+            "author": self.author,
+            "genre": self.genre,
+            "cost_prise": self.cost_prise,
+            "price_sale": self.price_sale
+        }

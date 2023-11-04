@@ -26,8 +26,9 @@ class BookShop:
             15  Видалення інформації про книги.
             16  Додавання інформації про продаж.
             17  Видалення інформації про продаж.
-            18  Достать даные из файла.
-            19  Выход из магазина.
+            18  Записать информацию в файл.
+            19  Вывести информацию из файла
+            20  Выход из магазина.
             """)
             selection = input("\t\tВведите выбор: ")
             print()
@@ -91,26 +92,34 @@ class BookShop:
             elif selection == "12":
                 print("Додавання інформації про співробітників\n")
                 shop_sale.add_employee_list()
+                shop_sale.write_file()
             elif selection == "13":
                 print("Видалення інформації про співробітників\n")
                 shop_sale.delete_employee_list()
+                shop_sale.write_file()
             elif selection == "14":
                 print("Додавання інформації про книги\n")
                 shop_sale.add_book_list()
+                shop_sale.write_file()
             elif selection == "15":
                 print("Видалення інформації про книги\n")
                 shop_sale.delete_book_list()
+                shop_sale.write_file()
             elif selection == "16":
                 print("Додавання інформації про продаж\n")
                 shop_sale.add_data_sale()
+                shop_sale.write_file()
             elif selection == "17":
                 print("Видалення інформації про продаж\n")
                 shop_sale.delete_data_sale()
+                shop_sale.write_file()
             elif selection == "18":
-                print("Достать даные из файла")
-                shop_sale.obj_file.read_info_from_file(shop_sale)
-                print("Информация из файла записана в систему")
+                print("Записать информацию в файл\n")
+                shop_sale.write_file()
             elif selection == "19":
+                print("Вывести информацию из файла\n")
+                shop_sale.reade_file()
+            elif selection == "20":
                 print("Выход из магазина\n")
                 break
             else:

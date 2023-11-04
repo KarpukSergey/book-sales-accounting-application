@@ -11,7 +11,7 @@ if __name__ == '__main__':
     shop_sale.book_list.append(Book("c_book", "2014", "puschkin", "roman", "120", "220"))
     shop_sale.employee_list.append(Employee("A_employee", "A-familia", "A-Developer", "+38099999999", "user1@gmail.com"))
     shop_sale.employee_list.append(Employee("B_employee", "B-familia", "B-Developer", "+38066666666", "user2@gmail.com"))
-    shop_sale.employee_list.append(Employee("B_employee", "C-familia", "B-Developer", "+38066666666", "user2@gmail.com"))
+    shop_sale.employee_list.append(Employee("C_employee", "C-familia", "B-Developer", "+38022222222", "user3@gmail.com"))
     shop_sale.data_sale.append(["A_employee", "a_book", "03.11.2023"])
     shop_sale.data_sale.append(["B_employee", "b_book", "05.11.2023"])
     shop_sale.data_sale.append(["B_employee", "c_book", "11.11.2023"])

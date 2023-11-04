@@ -1,0 +1,19 @@
+{
+    "sale": [
+        {
+            "name": "A_employee",
+            "book": "a_book",
+            "date": "03.11.2023"
+        },
+        {
+            "name": "B_employee",
+            "book": "b_book",
+            "date": "05.11.2023"
+        },
+        {
+            "name": "B_employee",
+            "book": "c_book",
+            "date": "11.11.2023"
+        }
+    ]
+}

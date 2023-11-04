@@ -1,3 +1,6 @@
+import json
+
+
 class Employee:
 
     def __init__(self, first_name=None, last_name=None,
@@ -62,3 +65,11 @@ class Employee:
             except ValueError as s:
                 print(s)
 
+    def to_json(self):
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "job_title": self.job_title,
+            "phone_number": self.phone_number,
+            "email": self.email
+        }

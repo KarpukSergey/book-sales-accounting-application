@@ -1,0 +1,28 @@
+{
+    "book": [
+        {
+            "name": "a_book",
+            "year": "2012",
+            "author": "puschkin",
+            "genre": "roman",
+            "cost_prise": "156",
+            "price_sale": "200"
+        },
+        {
+            "name": "b_book",
+            "year": "2013",
+            "author": "scheva",
+            "genre": "pop",
+            "cost_prise": "120",
+            "price_sale": "250"
+        },
+        {
+            "name": "c_book",
+            "year": "2014",
+            "author": "puschkin",
+            "genre": "roman",
+            "cost_prise": "120",
+            "price_sale": "220"
+        }
+    ]
+}
